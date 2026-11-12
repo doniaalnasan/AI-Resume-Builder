@@ -1,0 +1,221 @@
+
+.cvs {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --tint: #eef0ff;
+  --tint-strong: #e3e6ff;
+  --text: #1e1b3a;
+  --muted: #5b6070;
+  --border: #e6e8f6;
+ 
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 40px 24px 64px;
+  direction: rtl;
+  font-family: "IBM Plex Sans Arabic", Tahoma, system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 45%);
+}
+ 
+.cvs__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+/* ---------- Hero ---------- */
+.cvs__hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+ 
+.cvs__hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+ 
+.cvs__hero-text h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+ 
+.cvs__hero-text p {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--muted);
+}
+ 
+.cvs__add {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #5b4fe0 0%, var(--primary-dark) 100%);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.28);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+ 
+.cvs__add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.34);
+}
+ 
+/* ---------- images ---------- */
+.cvs__images img{
+  max-width: 500px;
+  height: 400px;
+
+}
+/* ---------- Grid ---------- */
+.cvs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+ 
+.cvs__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 24px 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+ 
+.cvs__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(79, 70, 229, 0.12);
+}
+ 
+.cvs__card-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  background: var(--tint);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cvs__card-icon img {
+  width: 65px;
+  height: 70px;
+}
+
+.cvs__card-title {
+  margin: 6px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+ 
+.cvs__card-date {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+ 
+.cvs__card-actions {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+}
+ 
+.cvs__btn {
+  flex: 1;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+ 
+.cvs__btn--primary {
+  border: 0;
+  background: var(--tint-strong);
+  color: var(--primary-dark);
+}
+ 
+.cvs__btn--primary:hover {
+  background: #d7dbff;
+}
+ 
+.cvs__btn--outline {
+  border: 1px solid #dfe2f2;
+  background: #fff;
+  color: var(--text);
+}
+ 
+.cvs__btn--outline:hover {
+  border-color: var(--primary);
+  background: #f9f9ff;
+}
+ 
+.cvs__add:focus-visible,
+.cvs__btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .cvs__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+ 
+@media (max-width: 640px) {
+  .cvs {
+    padding: 24px 16px 48px;
+  }
+  .cvs__hero {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    margin-bottom: 32px;
+  }
+  .cvs__hero-text {
+    align-items: stretch;
+  }
+  .cvs__hero-text h1 {
+    font-size: 30px;
+  }
+  .cvs__add {
+    justify-content: center;
+  }
+  .cvs__art {
+    align-self: center;
+  }
+  .cvs__grid {
+    grid-template-columns: 1fr;
+  }
+}

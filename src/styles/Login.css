@@ -1,0 +1,256 @@
+.container {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --tint: #eef0ff;
+  --text: #1e1b3a;
+  --muted: #5b6070;
+  --border: #dfe2f2;
+ 
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  font-family: "IBM Plex Sans Arabic", Tahoma, system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, #f3f4ff 0%, #ffffff 55%, #f7f5ff 100%);
+}
+ 
+/* ---------- Card ---------- */
+.loginForm {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+  border: 1px solid #e6e8f6;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(79, 70, 229, 0.12);
+}
+ 
+/* ---------- Header (lock box on the right, text beside it) ---------- */
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+ 
+.welcome > svg {
+  order: -1; /* puts the lock first = far right in RTL */
+  flex-shrink: 0;
+  box-sizing: content-box;
+  width: 26px;
+  height: 26px;
+  padding: 13px;
+  border-radius: 14px;
+  background: var(--tint);
+  color: var(--primary);
+}
+ 
+.welcome h3 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+ 
+.welcome h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--muted);
+}
+ 
+/* ---------- Form ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.form > label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+ 
+.form > label:not(:first-child) {
+  margin-top: 10px;
+}
+ 
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+ 
+.inputGroup:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+ 
+.inputGroup svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+ 
+.inputGroup input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+}
+ 
+.inputGroup input::placeholder {
+  color: #6b7280;
+}
+ 
+/* ---------- Remember / Forgot ---------- */
+.loginOptions {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.loginOptions label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+  color: #3b3f55;
+  cursor: pointer;
+}
+ 
+.loginOptions input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+ 
+.loginOptions a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+ 
+.loginOptions a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+ 
+/* ---------- Submit button ---------- */
+.form button[type="submit"] {
+  margin-top: 8px;
+  height: 52px;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #5b4fe0 0%, var(--primary-dark) 100%);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.28);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+ 
+.form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.34);
+}
+ 
+.form button[type="submit"]:active {
+  transform: translateY(0);
+}
+ 
+.form button[type="submit"]:focus-visible,
+.loginOptions a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+ 
+/* ---------- Divider ---------- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #e6e8f6;
+}
+ 
+.divider p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+ 
+/* ---------- Sign up ---------- */
+.signup {
+  text-align: center;
+}
+ 
+.signup p {
+  margin: 0;
+  font-size: 14px;
+  color: #3b3f55;
+}
+ 
+.signup span,
+.signup a {
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+ 
+.signup span:hover,
+.signup a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+ 
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .loginForm {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  .welcome h3 {
+    font-size: 24px;
+  }
+}

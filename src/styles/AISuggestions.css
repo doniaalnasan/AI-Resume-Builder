@@ -1,0 +1,286 @@
+.ai-page {
+  --ai-primary: #6d3fd1;
+  --ai-primary-dark: #5b2fbd;
+  --ai-soft: #f3edff;
+  --ai-border: #e6dcfa;
+  --ai-text: #1e1b4b;
+  --ai-muted: #6b7280;
+ 
+  min-height: 100vh;
+  padding: 32px 24px 80px;
+  background: var(--cv-bg, #f6f7fb);
+  color: var(--ai-text);
+  font-family: "Cairo", "Tajawal", "Segoe UI", Tahoma, sans-serif;
+}
+ 
+.ai-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 720px;
+  margin: 0 auto 12px;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  color: var(--ai-muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ai-back:hover {
+  color: var(--ai-primary);
+}
+.ai-page > .ai-back {
+  display: flex;
+  width: 100%;
+}
+ 
+/* ===== الكرت الرئيسي ===== */
+.ai-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  background: linear-gradient(180deg, #faf7ff 0%, #ffffff 40%);
+  border: 1px solid var(--ai-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(109, 63, 209, 0.12);
+}
+ 
+.ai-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.ai-card__head h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.ai-card__head p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ai-muted);
+}
+ 
+.ai-icon-box {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #eef0f6;
+  color: #5b6478;
+}
+.ai-icon-box--lg {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--ai-soft);
+  color: var(--ai-primary);
+}
+.ai-icon-box--ai {
+  background: var(--ai-soft);
+  color: var(--ai-primary);
+}
+ 
+/* ===== الصناديق ===== */
+.ai-box {
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #e8eaf1;
+  border-radius: 14px;
+}
+.ai-box--ai {
+  background: linear-gradient(180deg, #f8f4ff 0%, #fdfcff 100%);
+  border-color: var(--ai-border);
+}
+.ai-box__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.ai-box__head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+.ai-box__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #374151;
+}
+.ai-empty {
+  color: var(--ai-muted);
+}
+ 
+.ai-pill {
+  margin-inline-start: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #eef0f6;
+  color: #5b6478;
+  font-size: 12px;
+  font-weight: 700;
+}
+.ai-pill--ai {
+  background: #ebe1ff;
+  color: var(--ai-primary);
+}
+ 
+.ai-arrow {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  border-radius: 50%;
+  background: var(--ai-soft);
+  color: var(--ai-primary);
+}
+ 
+/* ===== النص القابل للتعديل ===== */
+.ai-textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px dashed transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #374151;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.9;
+  resize: vertical;
+  outline: 0;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.ai-textarea:hover {
+  border-color: var(--ai-border);
+}
+.ai-textarea:focus {
+  border: 1px solid var(--ai-primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(109, 63, 209, 0.12);
+}
+.ai-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--ai-muted);
+}
+ 
+/* ===== شكل التحميل ===== */
+.ai-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 0;
+}
+.ai-skeleton span {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ece4fb 25%, #f7f2ff 50%, #ece4fb 75%);
+  background-size: 200% 100%;
+  animation: ai-shimmer 1.2s infinite linear;
+}
+.ai-skeleton span:nth-child(2) {
+  width: 90%;
+}
+.ai-skeleton span:nth-child(3) {
+  width: 65%;
+}
+@keyframes ai-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+ 
+/* ===== الأزرار السفلية ===== */
+.ai-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.ai-footer__note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  margin-inline-end: auto;
+  font-size: 12.5px;
+  color: var(--ai-muted);
+}
+.ai-footer__note svg {
+  color: var(--ai-primary);
+  flex-shrink: 0;
+}
+ 
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s, transform 0.1s;
+}
+.ai-btn:active {
+  transform: scale(0.98);
+}
+.ai-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.ai-btn--primary {
+  border: 0;
+  background: linear-gradient(135deg, #7c4ddf, var(--ai-primary-dark));
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(109, 63, 209, 0.28);
+}
+.ai-btn--primary:hover:not(:disabled) {
+  background: var(--ai-primary-dark);
+}
+.ai-btn--outline {
+  border: 1px solid var(--ai-border);
+  background: #fff;
+  color: var(--ai-primary);
+}
+.ai-btn--outline:hover:not(:disabled) {
+  background: var(--ai-soft);
+}
+ 
+/* ===== الشاشات الصغيرة ===== */
+@media (max-width: 640px) {
+  .ai-page {
+    padding: 20px 14px 60px;
+  }
+  .ai-card {
+    padding: 16px;
+  }
+  .ai-footer {
+    flex-wrap: wrap;
+  }
+  .ai-footer__note {
+    order: 3;
+    width: 100%;
+    margin-inline-end: 0;
+  }
+  .ai-btn {
+    flex: 1;
+  }
+}
+ 
