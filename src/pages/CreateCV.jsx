@@ -15,13 +15,13 @@ const MOCK_PARSED_CV = {
   summary:
     "مطور واجهات أمامية لدي خبرة في بناء صفحات الهبوط ولوحات التحكم والمتاجر الإلكترونية. أعمل على تحسين تجربة المستخدم وتقديم واجهات واضحة وعملية تناسب احتياجات المشروع.",
 };
- 
+
 //Dummy Function
 const mockUploadCv = async () => {
   await wait(1500);
   return MOCK_PARSED_CV;
 };
- 
+
 const mockApproveCv = async (formData) => {
   await wait(800);
   const slug =
@@ -30,7 +30,7 @@ const mockApproveCv = async (formData) => {
     shareUrl: `https://ai-resume-builder.com/cv/${encodeURIComponent(slug)}`,
   };
 };
- 
+
 const Icon = ({ children, size = 20 }) => (
   <svg
     width={size}

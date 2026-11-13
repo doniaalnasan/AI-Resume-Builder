@@ -31,8 +31,11 @@ export default function MyCVs({ cvs = SAMPLE_CVS, onAdd, onView, onShare }) {
 
     return (
     <main className="cvs" dir="rtl">
-    <div className="cvs__container">
+
         <Navbar />
+        
+    <div className="cvs__container">
+        
         {/* ---------- Hero ---------- */}
         <section className="cvs__hero">
         <div className="cvs__hero-text">

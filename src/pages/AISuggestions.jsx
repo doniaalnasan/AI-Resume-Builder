@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";import "../styles/AISuggestions.css";
- 
-/* ========= بيانات تجريبية (Mock) لاقتراحات الـ AI ========= */
+import { useEffect, useRef, useState } from "react";
+import "../styles/AISuggestions.css";
+
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
- 
-// كل نوع إله أكثر من صيغة، وزر "إعادة التوليد" بيتنقل بينهم
+
 const MOCK_VARIANTS = {
   title: [
     "مطور واجهات أمامية أول (Senior Frontend Developer)",
@@ -21,15 +20,15 @@ const MOCK_VARIANTS = {
     "React, TypeScript, Tailwind CSS, Vite, Zustand, Cypress, Git, CI/CD",
   ],
 };
- 
-// دالة وهمية تحاكي الباك اند (استبدلها بـ fetch لاحقاً)
+
+//mock
 const mockGenerateSuggestion = async (type, attempt) => {
   await wait(1000);
   const list = MOCK_VARIANTS[type] ?? [""];
   return list[(attempt - 1) % list.length];
 };
- 
-/* ========= نصوص كل نوع اقتراح ========= */
+
+
 const CONFIG = {
   title: {
     currentTitle: "مسماك الحالي",
@@ -53,8 +52,8 @@ const CONFIG = {
     rows: 3,
   },
 };
- 
-/* ========= أيقونات ========= */
+
+/* ========= icon ========= */
 const Icon = ({ children, size = 20 }) => (
   <svg
     width={size}
@@ -108,13 +107,8 @@ const BackIcon = (p) => (
     <path d="M9 6l6 6-6 6" />
   </Icon>
 );
- 
-/* ========= الصفحة =========
-   type:         "title" | "summary" | "skills"
-   currentValue: النص الحالي (نص عادي)
-   onApprove:    (finalText) => void   — بينادى لما يضغط اعتماد
-   onBack:       () => void            — الرجوع بدون تعديل
-*/
+
+
 export default function AiSuggestion({ type, currentValue, onApprove, onBack }) {
   const cfg = CONFIG[type] ?? CONFIG.summary;
 
@@ -124,6 +118,7 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
 
   useEffect(() => {
     let isMounted = true;
+    const currentRequestId = requestId;
 
     const generate = async () => {
       const id = ++requestId.current;
@@ -150,9 +145,9 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
 
     return () => {
       isMounted = false;
-      requestId.current++;
+      currentRequestId.current++;
     };
-  }, [type]);
+}, [type]);
 
   const generateAgain = async () => {
     const id = ++requestId.current;
@@ -183,7 +178,7 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
         <BackIcon size={16} />
         رجوع للـ CV
       </button>
- 
+
       <section className="ai-card">
         {/* ===== الهيدر ===== */}
         <header className="ai-card__head">
@@ -195,8 +190,8 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
             <p>قارن بين وصفك الحالي والوصف المقترح من الذكاء الاصطناعي</p>
           </div>
         </header>
- 
-        {/* ===== الحالي ===== */}
+
+        {/* ===== current ===== */}
         <div className="ai-box">
           <div className="ai-box__head">
             <span className="ai-icon-box">
@@ -214,7 +209,7 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
           <ArrowDownIcon size={18} />
         </div>
  
-        {/* ===== المقترح من الـ AI (قابل للتعديل) ===== */}
+        {/* ===== Editable AI proposal ===== */}
         <div className="ai-box ai-box--ai">
           <div className="ai-box__head">
             <span className="ai-icon-box ai-icon-box--ai">
@@ -246,14 +241,14 @@ export default function AiSuggestion({ type, currentValue, onApprove, onBack }) 
           {!loading && <small className="ai-hint">يمكنك تعديل النص قبل الاعتماد.</small>}
         </div>
  
-        {/* ===== الأزرار ===== */}
+        {/* ===== button ===== */}
         <footer className="ai-footer">
           <p className="ai-footer__note">
             <SparkIcon size={16} />
             {cfg.note}
           </p>
  
-          <button type="button" className="ai-btn ai-btn--outline" onClick={generate} disabled={loading}>
+          <button type="button" className="ai-btn ai-btn--outline" onClick={generateAgain} disabled={loading}>
             <RefreshIcon size={16} />
             إعادة التوليد
           </button>

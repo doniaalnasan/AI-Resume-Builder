@@ -16,15 +16,13 @@
   box-sizing: border-box;
 }
 
-.cv-build{
-  margin-top:45px;
-}
+
 .cv-page {
   min-height: 100vh;
   padding: 32px 24px 120px;
   background: var(--cv-bg);
   color: var(--cv-text);
-  font-family: "Cairo", "Tajawal", "Segoe UI", Tahoma, sans-serif;
+  font-family:inherit;
   position: relative;
 }
  

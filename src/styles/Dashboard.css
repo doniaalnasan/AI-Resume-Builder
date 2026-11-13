@@ -10,7 +10,7 @@
  
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 40px 24px 64px;
+  padding: 0px 24px 60px;
   direction: rtl;
   font-family: "IBM Plex Sans Arabic", Tahoma, system-ui, sans-serif;
   color: var(--text);
