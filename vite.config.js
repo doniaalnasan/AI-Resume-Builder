@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/AI-Resume-Builder/',
+  base: '/',
   server: {
     proxy: {
       '/cv': {
