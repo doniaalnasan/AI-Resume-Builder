@@ -1,4 +1,3 @@
-
 .cvs {
   --primary: #4f46e5;
   --primary-dark: #4338ca;
@@ -7,7 +6,7 @@
   --text: #1e1b3a;
   --muted: #5b6070;
   --border: #e6e8f6;
- 
+
   min-height: 100vh;
   box-sizing: border-box;
   padding: 0px 24px 60px;
@@ -16,13 +15,12 @@
   color: var(--text);
   background: linear-gradient(180deg, #f6f7ff 0%, #ffffff 45%);
 }
- 
+
 .cvs__container {
   max-width: 1100px;
   margin: 0 auto;
 }
- 
-/* ---------- Hero ---------- */
+
 .cvs__hero {
   display: flex;
   align-items: center;
@@ -30,27 +28,31 @@
   gap: 32px;
   margin-bottom: 48px;
 }
- 
+.cvs__status{
+  margin: auto;
+  padding: 0%;
+}
+
 .cvs__hero-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
 }
- 
+
 .cvs__hero-text h1 {
   margin: 0;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.25;
 }
- 
+
 .cvs__hero-text p {
   margin: 0 0 8px;
   font-size: 16px;
   color: var(--muted);
 }
- 
+
 .cvs__add {
   display: inline-flex;
   align-items: center;
@@ -68,25 +70,25 @@
   box-shadow: 0 10px 24px rgba(79, 70, 229, 0.28);
   transition: transform 0.15s, box-shadow 0.15s;
 }
- 
+
 .cvs__add:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 28px rgba(79, 70, 229, 0.34);
 }
- 
-/* ---------- images ---------- */
+
+
 .cvs__images img{
   max-width: 500px;
   height: 400px;
 
 }
-/* ---------- Grid ---------- */
+
 .cvs__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
- 
+
 .cvs__card {
   display: flex;
   flex-direction: column;
@@ -99,12 +101,12 @@
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.06);
   transition: transform 0.15s, box-shadow 0.15s;
 }
- 
+
 .cvs__card:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 36px rgba(79, 70, 229, 0.12);
 }
- 
+
 .cvs__card-icon {
   width: 90px;
   height: 90px;
@@ -128,7 +130,7 @@
   text-align: center;
   overflow-wrap: anywhere;
 }
- 
+
 .cvs__card-date {
   margin: 0;
   display: flex;
@@ -137,14 +139,14 @@
   font-size: 13px;
   color: var(--muted);
 }
- 
+
 .cvs__card-actions {
   width: 100%;
   margin-top: 10px;
   display: flex;
   gap: 12px;
 }
- 
+
 .cvs__btn {
   flex: 1;
   height: 44px;
@@ -159,41 +161,41 @@
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
- 
+
 .cvs__btn--primary {
   border: 0;
   background: var(--tint-strong);
   color: var(--primary-dark);
 }
- 
+
 .cvs__btn--primary:hover {
   background: #d7dbff;
 }
- 
+
 .cvs__btn--outline {
   border: 1px solid #dfe2f2;
   background: #fff;
   color: var(--text);
 }
- 
+
 .cvs__btn--outline:hover {
   border-color: var(--primary);
   background: #f9f9ff;
 }
- 
+
 .cvs__add:focus-visible,
 .cvs__btn:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
- 
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .cvs__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
- 
+
 @media (max-width: 640px) {
   .cvs {
     padding: 24px 16px 48px;
@@ -218,4 +220,76 @@
   .cvs__grid {
     grid-template-columns: 1fr;
   }
+}
+
+.cvs__card {
+    position: relative;
+}
+
+.cvs__menu-wrapper {
+    position: absolute;
+    top: 12px;
+    inset-inline-start: 12px;
+    z-index: 5;
+}
+
+.cvs__menu-trigger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: #555;
+    border-radius: 6px;
+}
+
+.cvs__menu-trigger:hover {
+    background: #f1f1f1;
+}
+
+.cvs__dropdown {
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    min-width: 140px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 5px;
+}
+
+.cvs__delete-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #dc3545;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.cvs__delete-option:hover {
+    background: #fff0f0;
+}
+
+.cvs__edit-option{
+  display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #5b4fe0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.cvs__edit-option:hover{
+    background: #d6d1e2;
 }

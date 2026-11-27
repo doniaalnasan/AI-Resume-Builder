@@ -5,14 +5,14 @@
   --ai-border: #e6dcfa;
   --ai-text: #1e1b4b;
   --ai-muted: #6b7280;
- 
+
   min-height: 100vh;
   padding: 32px 24px 80px;
   background: var(--cv-bg, #f6f7fb);
   color: var(--ai-text);
   font-family: "Cairo", "Tajawal", "Segoe UI", Tahoma, sans-serif;
 }
- 
+
 .ai-back {
   display: inline-flex;
   align-items: center;
@@ -35,8 +35,7 @@
   display: flex;
   width: 100%;
 }
- 
-/* ===== الكرت الرئيسي ===== */
+
 .ai-card {
   max-width: 720px;
   margin: 0 auto;
@@ -46,7 +45,7 @@
   border-radius: 20px;
   box-shadow: 0 12px 36px rgba(109, 63, 209, 0.12);
 }
- 
+
 .ai-card__head {
   display: flex;
   align-items: center;
@@ -85,8 +84,7 @@
   background: var(--ai-soft);
   color: var(--ai-primary);
 }
- 
-/* ===== الصناديق ===== */
+
 .ai-box {
   padding: 16px 18px;
   background: #fff;
@@ -145,8 +143,7 @@
   background: var(--ai-soft);
   color: var(--ai-primary);
 }
- 
-/* ===== النص القابل للتعديل ===== */
+
 .ai-textarea {
   display: block;
   width: 100%;
@@ -176,8 +173,7 @@
   font-size: 12px;
   color: var(--ai-muted);
 }
- 
-/* ===== شكل التحميل ===== */
+
 .ai-skeleton {
   display: flex;
   flex-direction: column;
@@ -203,8 +199,7 @@
     background-position: -200% 0;
   }
 }
- 
-/* ===== الأزرار السفلية ===== */
+
 .ai-footer {
   display: flex;
   align-items: center;
@@ -262,8 +257,7 @@
 .ai-btn--outline:hover:not(:disabled) {
   background: var(--ai-soft);
 }
- 
-/* ===== الشاشات الصغيرة ===== */
+
 @media (max-width: 640px) {
   .ai-page {
     padding: 20px 14px 60px;
@@ -283,4 +277,129 @@
     flex: 1;
   }
 }
- 
+
+
+.ai-strengths {
+    margin: 12px 0 0;
+    padding-right: 22px;
+    line-height: 2;
+}
+
+.ai-improvements {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.ai-improvement {
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.ai-improvement__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ai-improvement p {
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+.ai-assessment {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.ai-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.ai-skill-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #eef2ff;
+}
+
+.ai-skill-item button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.ai-add-skill {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.ai-add-skill input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.ai-add-skill button {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ai-add-skill button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.ai-edit-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.ai-edit-section label {
+    font-weight: 600;
+}
+
+.ai-edit-section input,
+.ai-edit-section textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ai-edit-section input:focus,
+.ai-edit-section textarea:focus {
+    border-color: #6c63ff;
+}
+
+.ai-edit-section textarea {
+    resize: vertical;
+    line-height: 1.8;
+}
+
+.ai-edit-section small {
+    color: #777;
+    line-height: 1.7;
+}
