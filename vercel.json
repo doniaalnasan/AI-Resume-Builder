@@ -1,9 +1,12 @@
-
 {
     "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
+    {
+        "source": "/cv/:path*",
+        "destination": "https://smart-store.devamer.online/cv/:path*"
+    },
+    {
+        "source": "/(.*)",
+        "destination": "/"
+    }
     ]
 }
